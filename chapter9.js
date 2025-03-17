@@ -22,3 +22,20 @@ console.log(notBinary.test("101001000100010"))
 console.log(notBinary.test("10002000101001"))
 
 //Repeating Parts of a Pattern
+console.log(/'\d+'/.test(" '123' ")); 
+console.log(/'\d+'/.test("''"));
+console.log(/'\d*'/.test("'123'"));
+console.log(/'\d*'/.test(" '' "));
+
+let neighbor = /neighbou?r/;
+console.log(neighbor.test("neighbour")); 
+console.log(neighbor.test("neighbor")); 
+
+let dateTime1 = /\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2}/; 
+console.log(dateTime1.test("1-30-2003 8:45"));
+
+//Grouping Subexpressions
+let cartoonCrying = /boo+(hoo+)+/i; 
+console.log(cartoonCrying.test("Boohoooohoohooo")); 
+
+
