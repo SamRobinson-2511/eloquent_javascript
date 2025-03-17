@@ -100,4 +100,102 @@ function tableFor(event, journal){
   return table;
 };
 
-console.log(tableFor("pizza", journal));
+// console.log(tableFor("pizza", journal));
+
+//Array Loops
+console.clear()
+
+//Further Arrayology 
+let todoList = [];
+function remember(task){
+  todoList.push(task)
+}
+remember('take out')
+
+function getTask(){
+  return todoList.shift();
+}
+function rememberUrgently(task){
+  todoList.unshift(task)
+}
+remember("groceries")
+remember("cat shit")
+getTask()
+getTask()
+rememberUrgently("food")
+console.log(todoList);
+
+
+//indexOf and lastIndexOf
+console.log([1, 2, 3, 2, 1].indexOf(2))
+console.log([1, 2, 3, 2, 1].lastIndexOf(2))
+
+
+//slice
+console.log([0, 1, 2, 3, 4].slice(2, 4));
+console.log([0, 1, 2, 3, 4].slice(2));
+
+//concat
+function remove(array, index){
+  return array.slice(0, index).concat(array.slice(index + 1))
+}
+console.log(remove(["a", "b", "c", "d", "e"], 2))
+
+//strings and their properties
+let kim = "Kim";
+kim.age = 88; 
+console.log(kim.age);
+
+console.log("coconuts".slice(4, 7));
+console.log("coconut".indexOf("u")); 
+console.log("one two three".indexOf("ee"));
+console.log("     okay \n".trim());
+
+console.log(String(6).padStart(3, "0"));
+
+let sentence = "Secretarybirds specialize in stomping";
+let words = sentence.split(" ");
+console.log(words);
+console.log(words.join(". "))
+
+console.log("LA".repeat(3));
+
+
+let string = "abc";
+console.log(string.length);
+console.log(string[1])
+
+//rest parameters
+function max(...numbers){
+  let result = -Infinity;
+  for (let number of numbers){
+    if(number > result) result = number;
+  }
+  return result;
+}
+console.log(max(4, 1, 9, -2));
+
+let numbers = [5, 1, 7]; 
+console.log(max(...numbers));
+
+let words1 = ["never", "fully"]; 
+console.log(["will", ...words1, "understand"])
+
+//the math object
+function randomPointOnACircle(radius){
+  let angle = Math.random() * 2 * Math.PI;
+  return {x: radius * Math.cos(angle), 
+          y: radius * Math.sin(angle)}
+}
+console.log(randomPointOnACircle(2));
+
+
+//.random
+console.log(Math.random())
+console.log(Math.floor(Math.random() * 10));
+
+
+//Destructuring
+//JSON
+let string2 = JSON.stringify({squirrel: false, events: ["weekend"]});
+console.log(JSON.parse(string2).events);
