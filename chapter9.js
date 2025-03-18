@@ -39,3 +39,24 @@ let cartoonCrying = /boo+(hoo+)+/i;
 console.log(cartoonCrying.test("Boohoooohoohooo")); 
 
 
+//Matches and Groups 
+let match = /\d+/.exec("one two 100");
+console.log(match); ;
+console.log(match.index); 
+
+console.log("one two 100".match(/\d+/)); 
+
+let quotedText = /'([^']*)'/; 
+console.log(quotedText.exec("she said 'hello'")); 
+
+console.log(/bad(ly)?/.exec("bad")); 
+console.log(/(\d)+/.exec("123")); 
+
+//The Date Class
+console.log(new Date()); 
+console.log(new Date(2009, 11, 9));
+console.log(new Date(2009, 11, 9, 12, 59, 59, 999)); 
+
+console.log(new Date(2013, 11, 19).getTime()); 
+console.log(new Date(138740760000000))
+
