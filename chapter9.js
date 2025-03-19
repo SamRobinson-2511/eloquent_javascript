@@ -60,3 +60,18 @@ console.log(new Date(2009, 11, 9, 12, 59, 59, 999));
 console.log(new Date(2013, 11, 19).getTime()); 
 console.log(new Date(138740760000000))
 
+function getDate(string){
+  let [_, month, day, year] = /(\d{1,2})-(\d{1,2})-(\d{4})/.exec(string);
+  return new Date(year, month - 1, day)
+}
+console.log(getDate("1-30-2003")); 
+console.log(/cat/.test("concatenate")); 
+console.log(/\bcat\b/.test("concatenate")); 
+
+
+//Choice Patterns
+let animalCount = /\b\d+ (pig|cow|chicken)s?\b/;
+console.log(animalCount.test("15 pigs")); 
+console.log(animalCount.test("15 pigchickens")); 
+
+//The Mechanics of Matching
